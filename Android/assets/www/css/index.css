@@ -1,0 +1,59 @@
+* {
+  /* prevent callout when holding tap on links (the native dialog that comes up) */
+  -webkit-touch-callout: none; 
+
+  /* prevent webkit from resizing text to fit */
+  -webkit-text-size-adjust: none; 
+
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  -webkit-user-select: none; 
+
+
+}
+
+/*turn off webkit checkbox style, works for other inputs too*/
+input[type="checkbox"] { -webkit-appearance: none; }
+
+/*placeholder text opacity*/
+input::-webkit-input-placeholder { opacity: .8; }
+
+html,
+body {
+    height:100%;
+    width:100%;
+    padding: 0px;
+    margin:0px;
+    font-family:'Helvetica', arial;
+    -webkit-transform: translate3d(0px,0px,0px);
+  }
+
+#map{
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width: 100%
+}
+
+#arrow {
+    width: 0;
+    height: 0;
+    border-left: 18px solid rgba(0, 0, 0, 0);
+    border-right: 18px solid rgba(0, 0, 0, 0);
+    border-bottom: 60px solid rgba(39, 39, 39, 0.82);
+    z-index: 10;
+    position: absolute;
+    top: 8px;
+    left: 30px;
+    color:white;
+}
+#arrow-text{
+    position: absolute;
+    left: 32px;
+    top: 76px;
+    color: #3C3C3C;
+    z-index: 11;
+}
