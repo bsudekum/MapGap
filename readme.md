@@ -44,11 +44,11 @@ In this example MapGap-folder does not exist before running `./create`
 
 * If after opening your Android project in Eclipse for the first time, your project has a red X indicating there is a problem follow these additional steps:
 
-	1. Right click on the project folder.
-	2. In the Properties dialog that is displayed select Android from the navigation pane.
-	3. For the project build target select the highest Android API level you have installed.
-	4. Click OK
-	5. Then from the Project menu bar item select Clean.
+    1. Right click on the project folder.
+    2. In the Properties dialog that is displayed select Android from the navigation pane.
+    3. For the project build target select the highest Android API level you have installed.
+    4. Click OK
+    5. Then from the Project menu bar item select Clean.
 
 ### Hello World
 Every time you generate a new PG project, it comes with a simple hello world app that tells you the API is 'talking' to your device. Once you have setup your environment, it will be time to run the hellow world app. For iOS I recommend running the app in the simulator and for Android I recommend running it on your device. I found the Android simulator to be painstakingly slow and it was much easier to plug in your phone and run it there. Apple makes it a little more difficult to an app on a personal device and it will also require membership in Apple's [iOS Deverloper Program](https://developer.apple.com/programs/ios/).
@@ -61,7 +61,7 @@ PG runs once `document.addEventListener('deviceready', onDeviceReady, false);` i
 
 ```
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-	destinationType: Camera.DestinationType.DATA_URL
+    destinationType: Camera.DestinationType.DATA_URL
  }); 
 
 function onSuccess(imageData) {
@@ -70,7 +70,7 @@ function onSuccess(imageData) {
 }
 
 function onFail(message) {
-	alert('Failed because: ' + message);
+    alert('Failed because: ' + message);
 }
 ```
 Or get access to the devices [accelerometer](http://docs.phonegap.com/en/2.7.0/cordova_accelerometer_accelerometer.md.html#Accelerometer):
@@ -84,7 +84,7 @@ function onSuccess(acceleration) {
 };
 
 function onError() {
-	alert('onError!');
+    alert('onError!');
 };
 
 navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
@@ -111,13 +111,13 @@ There are 3 important lines of CSS to include
 #### Remove clutter from the map
 Zoom controls are overkill and attribution does not need to be directly on the map. Removing these items from the screen opens up the map.
 ```
-	var map = L.map('map', {
-	  zoomControl: false,
-	  attributionControl: false,
+    var map = L.map('map', {
+      zoomControl: false,
+      attributionControl: false,
     });
 ```
 #### Retina Tiles
-More so than not, a mobile device will have a 'retina display'. Supporting these devices when you are able to makes your app look and feel good accross all devices. [MapBox](http://mapbox.com) makes tiles with labels that are 2 times the normal amount. This is because MapBox.js shrinks the tiles by half when (256px to 128px) so the labels need to compensate in size to remain legiable. 
+More so than not, a mobile device will have a 'retina display'. Supporting these devices when you are able to makes your app look and feel good across all devices. [MapBox](http://mapbox.com) makes tiles with labels that are 2 times the normal amount. This is because MapBox.js shrinks the tiles by half when (256px to 128px) so the labels need to compensate in size to remain legible. 
 
 ![](https://tiles.mapbox.com/v3/bobbysud.map-2pkc4w2f/3/4/3.png)
 ![](https://tiles.mapbox.com/v3/bobbysud.map-tyt3admo/3/4/3.png)
@@ -140,7 +140,7 @@ Scaling the viewport makes the items in the screen proportional for smaller scre
 ```
 
 #### `updateWhenIdle`
-This is one of my favorite performamce gains. With MapBox.js, tiles are placed on the map **after** panning has completed (true only on mobile). By setting `updateWhenIdle:false` the tiles are loaded and placed on the map while the user pans giving the sense that the map is incredible fast. This however can detrimental on larger screens (iPad) and is best set to default. I like to query the screen size and apply this method for only smaller screens:
+This is one of my favorite performance gains. With MapBox.js, tiles are placed on the map **after** panning has completed (true only on mobile). By setting `updateWhenIdle:false` the tiles are loaded and placed on the map while the user pans giving the sense that the map is incredible fast. This however can detrimental on larger screens (iPad) and is best set to default. I like to query the screen size and apply this method for only smaller screens:
 
 ```
 // Apply method for smaller screens
@@ -159,7 +159,7 @@ if(window.innerWidth<641){
 ## Optimizing your app
 
 #### Testing
-Testing is a very important process in creating an app. Although the simulator is good, it is best to test your app on range of actual devices to get a feel for what the user interaction is like as well as trouble shooting bugs. An important decision to make when testing on devices is what minimum software version to support. With Apple, most users have updated to iOS 6+ which makes testing easier. Android on the other hand can be a little more difficult due to segmentation of devices and software. Many plugins (which will be discussed later) only support newer software versions. The bottom line is, test on as many devices as you can as you'll find you apps weak points.
+Testing is a very important process in creating an app. Although the simulator is good, it is best to test your app on range of actual devices to get a feel for what the user interaction is like as well as troubleshooting bugs. An important decision to make when testing on devices is what minimum software version to support. With Apple, most users have updated to iOS 6+ which makes testing easier. Android on the other hand can be a little more difficult due to segmentation of devices and software. Many plugins (which will be discussed later) only support newer software versions. The bottom line is, test on as many devices as you can as you'll find you apps weak points.
 
 #### File structure
 Although it is possible to make remote calls to a server to fetch assets, it is general not a good idea. This is due to network connection issues that can make your app feel slow and sometimes, not even load. Include all css, js and images in your `www`.
@@ -168,7 +168,7 @@ Although it is possible to make remote calls to a server to fetch assets, it is 
 Phonegap has a growing repository of some awesome plugins. There are all sorts of plugins:
 * Copy/Paste
 * Native Twitter integration
-* SMS feauture
+* SMS feature
 * Google Analytics
 * Facebook
 * [More]()
@@ -177,3 +177,4 @@ Although there are a lot, often times they do not keep up with Phonegap developm
 
 ## Get Going
 Now that I have showed you how to get started, give it a go and see what you can create. If you get stuck, most issues have happened before and a simple Google search will find you the answer. If you have any question about the tutorial, feel free to leave a question in the issues section. Happy mapping.
+
